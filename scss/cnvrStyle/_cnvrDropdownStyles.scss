@@ -1,0 +1,143 @@
+
+
+
+
+/***** dev *****/
+body{
+  padding: 25px;
+  background-color: #cccccc;
+}
+.appName{
+  font-size: 15pt;
+  color:black;
+}
+.innerContainer, .innerContainerDropdown{
+  background-color: white;
+  width: 270px;
+  height: 665px;
+  padding: 15px 10px;
+  overflow-x: hidden;
+  resize: horizontal;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+/*** end dev ***/
+
+*{
+  font: $font;
+  color: $textColor;
+}
+  .conv-dropdown-header-wrapper {
+    .conv-dropdown-item,
+    .conv-icon,
+    .conv-dropdown-menu-button {
+      cursor: pointer;
+    }
+
+    /*container for dropdown item's checkbox*/
+    .conv-dropdown-item span {
+      min-width: 20px;
+      display: inline-block;
+    }
+    ul {
+      margin: 0;
+    }
+    /*the list elements are the containers of the items in the dropdown
+     *the pseudo selectors are to control border on the first and last elements
+     *which require slightly different padding and borders to make them
+     *look consistent with the inner li elements */
+    li {
+      list-style-type: none;
+      font: $font;
+      padding: 12pt 10px 10pt 10px;
+      margin: 0;
+      display: block;
+    }
+    li:not(:last-child) {
+      border-bottom: 1px solid #DDDDDD;
+    }
+    li:first-child {
+      padding-top: 18px;
+      border-top: 1px solid transparent;
+    }
+    li:last-child {
+      padding-bottom: 18px;
+      border-bottom: 1px solid transparent;
+    }
+    li:hover {
+      background-color: rgb(228, 228, 228);
+      cursor: pointer;
+    }
+    li:not(:last-child):hover {
+      border-bottom: 1px solid #b1b1b1;
+    }
+    /*main container for dropdown content*/
+    .conv-dropdown-container {
+      transition: all $fadeDuration linear;
+      opacity: 0;
+      background-color: #F9F9F9;
+      border: 1px solid #c2c2c2;
+      box-shadow: 4px 4px 9px -2px rgba(0, 0, 0, 0.39);
+      position: relative;
+      left: -11px;
+      width: 272px;
+      margin-top: -2px;
+      z-index: -100
+    }
+    /*in order to animate changes to the dropdown's visibility, opacity is used instead of display or visibility
+     *an ng-class directive is used to control this opacity*/
+    .conv-dropdown-visible {
+      opacity: 1;
+    }
+    /*the downward chevron on the right of the chevron receives animation instructions so it may rotate 180º when clicked*/
+    .fa-chevron-down {
+      float: right;
+      transition-duration: $genericTransitionDuration;
+    }
+    .chevron-rotate {
+      transform: rotate(0.5turn);
+    }
+    /*checkmark for the selected option*/
+    .fa-check {
+      color: #19a41c;
+    }
+    /*styles for the "button". it is actually a <span>.
+     *it is a span because spans are my favorite elements.
+     *gentle and unassuming, when their display is changed to
+     *inline block, they can perform acts of great strength.
+     *they are the hobbits of the document object*/
+    .conv-dropdown-menu-button {
+      padding: 4px 14px 4px 7px;
+      border: 1px solid rgba(179, 162, 105, 0.8);
+      border-radius: 3px;
+      background-color: rgba(179, 162, 105, 0.06);
+      width: 100%;
+      display: inline-block;
+      top: 3px;
+      position: relative;
+      margin-bottom: 15px;
+    }
+    /*the container for the inner text of the hobbit that holds the selected option*/
+    .conv-selected-item-inner-wrapper {
+      width: 90%;
+      text-overflow: ellipsis;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .conv-dropdown-visible {
+      z-index: 1000 !important;
+    }
+
+    /*the border and cursor styles are removed from the button if only one item exists in the menu array*/
+    .conv-dropdown-menu-button-single-item{
+      border: 1px solid transparent !important;
+      cursor: initial !important;
+    }
+
+    hr {
+      margin-bottom: 0;
+    }
+
+  }

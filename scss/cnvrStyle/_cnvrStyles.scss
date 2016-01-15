@@ -1,0 +1,123 @@
+/***** global vars *****/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+$globalBorderStyle: 1px solid #999999;
+$globalBorderStyleHover: 1px solid #666666;
+$globalBorderStyleFocus: 1px solid #323232;
+$globalBorderStyleActive: 1px solid #999999;
+$globalBoxshadow: inset 10px 10px 12px -12px rgba(0,0,0,0.45);
+$globalDeemphasizeColor: #999999;
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+$gold1: rgba(179, 162, 105, 1);
+$gold2: rgba(179, 162, 105, 0.35);
+$gold3: rgba(179, 162, 105, 0.25);
+$gold4: rgba(179, 162, 105, 0.10);
+$gold5: rgba(179, 162, 105, 0.07);
+
+
+
+$font: 10pt "Open Sans", "helvetica", "arial", sans-serif;
+$textColor: #000000;
+$tabWidth: 100px;
+$fadeDuration: .15s;
+$genericTransitionDuration: .2s;
+$boxShadow: 10px 12px 11px -10px rgba(0,0,0,0.51);
+$inputBorderColor: #C8C8C8;
+$invalidTipWidth: 150px;
+$invalidTipLeft: 5px;
+$invalidTipBackgroundColor: #FFF8F8;
+$invalidArrowBorderWidth: 5px;
+$invalidArrowBorder:  $invalidArrowBorderWidth solid transparent;
+$iconColor: #C99700;
+
+$modalBackgroundColor: #F7F6F2;
+
+/*** end global vars ***/
+
+/***** global styles *****/
+
+
+  * {
+    font-size: 10pt;
+    font-weight: normal;
+  }
+
+input[type="color"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="email"], input[type="month"], input[type="number"], input[type="password"], input[type="search"], input[type="tel"], input[type="text"], input[type="time"], input[type="url"], input[type="week"], textarea, select[multiple=multiple], textarea {
+  outline: none;
+  border-radius: 0;
+  border: $globalBorderStyle;
+  box-shadow: $globalBoxshadow;
+}
+input[type="color"]:hover, input[type="date"]:hover, input[type="datetime"]:hover, input[type="datetime-local"]:hover, input[type="email"]:hover, input[type="month"]:hover, input[type="number"]:hover, input[type="password"]:hover, input[type="search"]:hover, input[type="tel"]:hover, input[type="text"]:hover, input[type="time"]:hover, input[type="url"]:hover, input[type="week"]:hover, textarea:hover, select[multiple=multiple]:hover, textarea:hover {
+  border: $globalBorderStyleHover;
+  box-shadow: $globalBoxshadow;
+}
+input[type="color"]:active, input[type="date"]:active, input[type="datetime"]:active, input[type="datetime-local"]:active, input[type="email"]:active, input[type="month"]:active, input[type="number"]:active, input[type="password"]:active, input[type="search"]:active, input[type="tel"]:active, input[type="text"]:active, input[type="time"]:active, input[type="url"]:active, input[type="week"]:active, textarea:active, select[multiple=multiple]:active, textarea:active {
+  border: $globalBorderStyleActive;
+  box-shadow: $globalBoxshadow;
+}
+input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="email"]:focus, input[type="month"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="time"]:focus, input[type="url"]:focus, input[type="week"]:focus, textarea:focus, select[multiple=multiple]:focus, textarea:focus {
+  border: $globalBorderStyleFocus;
+  box-shadow: $globalBoxshadow;
+}
+button, input[type="button"], input[type="reset"], input[type="submit"], button {
+  border: 1px solid #bdaf7c;
+  border-radius: 2px;
+  color: $gold1;
+  margin: 0;
+  width: 100%;
+  transition: all .2s;
+}
+button:active, input[type="button"]:active, input[type="reset"]:active, input[type="submit"]:active, button:active {
+  box-shadow: inset 7px 7px 10px -6px rgba(179, 162, 105, 0.43);
+  background-color: rgba(179, 162, 105, 0.09);
+}
+.cnvr-reverse-color, .cnvr-reverse-color:hover, .cnvr-reverse-color:active, .cnvr-reverse-color:focus,
+.cnvr-modal-close, .cnvr-modal-close:hover, .cnvr-modal-close:active, .cnvr-modal-close:focus{
+  color: white;
+  background-color: $gold1;
+}
+.cnvr-reverse-color:active,
+.cnvr-modal-close, .cnvr-modal-close:hover, .cnvr-modal-close:active, .cnvr-modal-close:focus{
+  box-shadow: inset 10px 10px 10px -6px #988A60;
+  border: 1px solid #807552;
+}
+
+.fieldset-content{
+  margin-left: 15px;
+}
+
+hr{
+  margin: 0 auto;
+  display: block;
+  border-bottom: 1px solid #A0A0A0;
+}
+.ng-invalid,
+.ng-invalid.ng-invalid-number,
+.ng-invalid.ng-invalid-number,
+.ng-invalid.ng-invalid-max,
+.ng-invalid.ng-invalid-max,
+.ng-invalid.ng-invalid-min,
+.ng-invalid.ng-invalid-min{
+  border: 1px solid red !important;
+  background-color: #F9E3E4;
+}
+
+/*inputs*/
+.large-input {
+  max-width: 300px;
+}
+.medium-input {
+  max-width: 150px;
+}
+.small-input{
+  max-width: 60px;
+}
+.conv-gold-icon{
+  color:$gold1;
+}

@@ -1,0 +1,55 @@
+<html>
+<head>
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/foundation/css/foundation.css" />
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <!-- endbower -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="css/app.css">
+    <!-- endinject -->
+</head>
+<body ng-app="tabs">
+<div class="innerContainerDropdown" ng-controller="main">
+    <div class="">
+        <div class="conv-dropdown-header-wrapper">
+            <div class="conv-menu-header">
+            <span class="conv-dropdown-menu-button" ng-click="dropdownVisible=!dropdownVisible" ng-class="{ 'conv-dropdown-menu-button-single-item' : secondaryMenuTabs.singleItem === true }">
+                <span class="conv-selected-item-inner-wrapper">
+                    {{secondaryMenuTabs.navs[selectedDropdownIndex].name}}
+                </span>
+                <i class="fa fa-chevron-down conv-icon" ng-class="{ 'chevron-rotate': dropdownVisible }" ng-hide="secondaryMenuTabs.singleItem === true"></i>
+            </span>
+            </div>
+            <hr>
+            <div class="conv-dropdown-container" ng-if="secondaryMenuTabs.singleItem === false" ng-class="{ 'conv-dropdown-visible': dropdownVisible }">
+                <ul>
+                    <li class="conv-dropdown-item conv-noselect"
+                        ng-repeat="nav in secondaryMenuTabs.navs track by $index"
+                        ng-click="selectDropdownNav(nav.index);">
+                        <span>
+                            <i class="fa fa-check conv-icon" ng-show="$index==selectedDropdownIndex"></i>
+                        </span>
+                        {{nav.name}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- bower:js -->
+<script src="bower_components/modernizr/modernizr.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-filter/dist/angular-filter.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/fastclick/lib/fastclick.js"></script>
+<script src="bower_components/jquery.cookie/jquery.cookie.js"></script>
+<script src="bower_components/jquery-placeholder/jquery.placeholder.js"></script>
+<script src="bower_components/foundation/js/foundation.js"></script>
+<!-- endbower -->
+<!-- inject:js -->
+<script src="app/angular/tabs.js"></script>
+<!-- endinject -->
+</body>
+</html>

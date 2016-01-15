@@ -1,0 +1,28 @@
+/*for radio buttons used as tabs*/
+
+.cnvr-tab-container{
+
+  .button-group label {
+    display: inline-block;
+  }
+
+  .button-group label:last-child .button-group-item {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: 0 solid transparent;
+  }
+
+  .button-group label .button-group-item {
+    border-left: 0 solid transparent;
+    border-radius: 0;
+    border-right: 0 solid transparent;
+  }
+
+  .button-group label input:checked + .button-group-item {
+    background: white;
+    border: 1px solid transparent;
+    box-shadow:none;
+    color: black;
+  }
+
+}
